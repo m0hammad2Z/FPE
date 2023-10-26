@@ -16,7 +16,12 @@ th, td{
     padding: 3px 0px 3px 2px;
 }
 
-
+#divider{
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
 
 #pink_ninja{
     padding-left: 0;
@@ -31,14 +36,27 @@ th, td{
     color: black;
 }
 
+#title{
+    margin: auto;
+    text-align: center;
+    width: 60%;
+}
+
+
 @media screen and (max-width: 800px) {
     table{
+        width: 80%;
+    }
+    #title{
         width: 80%;
     }
 }
 
 @media screen and (max-width: 1200px) {
     table{
+        width: 70%;
+    }
+    #title{
         width: 70%;
     }
 }
