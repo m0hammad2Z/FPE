@@ -1,0 +1,44 @@
+table{
+    width: 60%;
+    margin: auto;
+}
+
+table, th, td{
+    border: 1px solid gray;
+    color: rgb(56, 56, 56);
+}
+
+th{
+    background-color: yellow;
+    text-align: right;
+}
+th, td{
+    padding: 3px 0px 3px 2px;
+}
+
+
+
+#pink_ninja{
+    padding-left: 0;
+    background-color: pink;
+    text-align: center;
+}
+
+#best_learner{
+    padding-left: 0;
+    text-align: center;
+    font-weight: bold;
+    color: black;
+}
+
+@media screen and (max-width: 800px) {
+    table{
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    table{
+        width: 70%;
+    }
+}
