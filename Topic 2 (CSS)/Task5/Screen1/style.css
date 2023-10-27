@@ -1,0 +1,25 @@
+body{
+    background-color: rgb(228, 87, 228);
+}
+
+.container{
+    display: flex;
+    gap: 1em;
+}
+
+.box{
+    width: 15em;
+    height: 7em;
+    overflow: hidden;
+    background-color: white;
+}
+
+.another_box{
+    width: 100%;
+    height: 5em;
+    overflow: scroll;
+    overflow-x: hidden;
+    border-top: 3px solid black; 
+    border-bottom: 3px solid black;
+    margin: 1em 0;
+}
