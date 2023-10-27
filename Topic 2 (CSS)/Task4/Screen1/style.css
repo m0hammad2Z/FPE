@@ -1,0 +1,34 @@
+body{
+    margin: 0;
+}
+
+.first_div{
+    text-transform: uppercase;
+    text-align: center;
+    background-color: rgb(133, 79, 18);
+    padding: 3em 0;
+    margin: 0;
+    font-size: xx-large;
+}
+
+.second_div{
+    background-color: rgb(199, 153, 100);
+    padding: 2em 0;
+    height: 60vh;
+}
+
+.nav{
+    display: flex;
+    justify-content: center;
+}
+
+a{
+    text-decoration: none;
+    color: green;
+    margin: 0 1em;
+    font-size: 1.2em;
+}
+
+.brown_text{
+    color: brown;
+}
