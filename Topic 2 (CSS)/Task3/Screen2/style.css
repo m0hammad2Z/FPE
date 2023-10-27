@@ -1,0 +1,109 @@
+body{
+    color: rgb(0, 0, 0);
+    background: linear-gradient(90deg, rgb(135, 0, 161) 0%, rgb(235, 4, 197) 100%);
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue","Fira Sans",Ubuntu,Oxygen,"Oxygen Sans",Cantarell,"Droid Sans","Apple Color Emoji","Segoe UI Emoji","Segoe UI Emoji","Segoe UI Symbol","Lucida Grande",Helvetica,Arial,sans-serif;
+    font-weight: 400;
+}
+.main{
+    width: 70%;
+    margin: auto;
+    margin-top: 6em;
+    padding: 4em 0em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    border-radius: 3em;
+    box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.459);
+}
+
+.login_title{
+    margin-bottom: 1.2em;
+    font-size: 2.5em;
+    color: black;
+}
+.image_div{
+    margin-bottom: 4em;
+    /*For responsivity to work better with flex wrapping*/ margin-right: 10em; margin-left: 10em;
+}
+
+.form_div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /*For responsivity*/padding-right: 10em;
+}
+
+.form_div div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3em;
+}
+
+i{
+    position: absolute; 
+    margin-top: 0.6em;
+    margin-right: 12em;
+    font-size: 1.5em;
+    color: rgba(44, 44, 44, 0.705);
+}
+
+input[type="email"], input[type="password"]{
+    position: relative;
+    width: 100%;
+    background-color: rgba(128, 128, 128, 0.466);
+    color: rgba(156, 156, 156, 0.432);
+    outline: none;
+    border :transparent;
+    border-radius: 3em;
+    padding: 1em 5em;
+    font-size: 1.1em;
+    box-sizing: border-box;
+}
+
+input[type="submit"]{
+    width: 100%;
+    padding: 1em 5em;
+    color: white;
+    background-color: rgb(21, 204, 21);
+    border :transparent;
+    border-radius: 3em;
+    font-size: 1.1em;
+    box-sizing: border-box;
+    font-weight: bold;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(21, 204, 21);
+    font-size: 1.1em;
+    margin-top: 3em;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+    .main{
+        width: 90%;
+    }
+
+    input[type="email"], input[type="password"], input[type="submit"]{
+        width: 80%;
+    }
+    
+    i{
+        margin-right: 9em;
+    
+    }
+}
+
+
+@media screen and (max-width: 1680px) {
+    .form_div{
+        padding-right: 0;
+        
+    }
+    
+}
