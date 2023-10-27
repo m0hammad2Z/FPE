@@ -1,0 +1,78 @@
+.main{
+    
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue","Fira Sans",Ubuntu,Oxygen,"Oxygen Sans",Cantarell,"Droid Sans","Apple Color Emoji","Segoe UI Emoji","Segoe UI Emoji","Segoe UI Symbol","Lucida Grande",Helvetica,Arial,sans-serif;
+    font-weight: 400;
+}
+
+
+.nav{
+    width: 80%;
+    margin: 0 auto;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em 2em;
+    background-color: rgba(224, 222, 222, 0.836);
+}
+.nav > .title{
+    color: rgba(0, 0, 0, 0.459);
+}
+
+.nav-links > :nth-child(1) {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.459);
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-right: 0.5em;
+}
+
+.nav-links > :nth-child(2) {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.753);
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+
+
+.form_div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20vh;
+}
+
+.form_div div{
+    margin-bottom: 1em;
+}
+
+.form_div div input {
+    margin-top: 0.3em;
+}
+
+.form_div div label{
+    display: block;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.555);
+}
+
+.email_div input, .pass_div input{
+    padding: 0.5em 2em;
+    border: 1px solid rgba(133, 133, 133, 0.459);
+    border-radius: 5px;
+    outline: none;
+    font-size: 1.2em;
+}
+
+
+.btn{
+    width: 100%;
+    color: white;
+    background-color: rgb(67 164 235 / 97%);
+    border: none;
+    border-radius: 5px;
+    padding: 1em;
+    font-weight: bold;
+}
+

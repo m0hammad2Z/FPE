@@ -1,0 +1,120 @@
+
+
+.main{
+    padding: 2%;
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue","Fira Sans",Ubuntu,Oxygen,"Oxygen Sans",Cantarell,"Droid Sans","Apple Color Emoji","Segoe UI Emoji","Segoe UI Emoji","Segoe UI Symbol","Lucida Grande",Helvetica,Arial,sans-serif;
+    font-weight: 400;
+}
+
+img{
+    margin-left: 1em;
+    width: 10em;
+    height: auto;
+}
+
+.form_div{ 
+    width: 20em;
+    margin: auto;
+    margin-top: 5em;
+    padding: 1.6em;
+    border: 1px solid rgba(128, 128, 128, 0);
+    border-radius: 8px;
+    box-shadow: 0px 8px 8px 0px rgba(128, 128, 128, 0.377);
+}
+
+.join_div{
+    width: 20em;
+    margin: auto;
+}
+
+.sign_in_text{
+    margin-bottom: 1.6em;
+}
+.sign_in_text > *{
+    margin: 2px;
+}
+
+form{
+    width: 100%;
+}
+
+input{
+    width: 90%;
+    margin: 0.4em 0;
+    padding: 0.8em;
+    border: 2px solid rgba(70, 70, 70, 0.377);
+    border-radius: 4px;
+    font-size: large;
+}
+
+button{
+    width: 100%;
+    padding: 1em 0.8em;
+    background-color:#0073b1 ;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    border-color: rgba(70, 70, 70, 0);
+    border-radius: 30px;
+}
+
+#sign_in_with_apple_button{
+    border: 1px solid rgb(56, 55, 55);
+    color: rgba(56, 55, 55, 0.993);
+    background-color: transparent;
+}
+
+.pass{
+    width: 100%;
+    position: relative;
+}
+.pass > button{
+    position: absolute;
+    bottom: 15px;
+    right: 0;
+}
+#forgot_password_button, #show_password_button, #join_button {
+    width: auto;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    color: #0073b1;
+    font-size: small;
+    font-weight: 600;
+}
+
+
+
+
+#forgot_password_button{
+    margin-bottom: 0.5em;
+}
+
+.or_div{
+    margin: auto;
+    text-align: center;
+    color: gray;
+}
+
+.or_div::before, .or_div::after{
+    content: "";
+    display: inline-block;
+    width: 40%;
+    height: 1px;
+    background-color: gray;
+    vertical-align: middle;
+    margin: 0 0.5em;
+}
+
+.join_div{
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    
+}
+
+
+@media screen and (max-width: 600px) {
+    .form_div{
+        width: 18em;
+    }
+}
