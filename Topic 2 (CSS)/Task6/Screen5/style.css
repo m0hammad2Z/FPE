@@ -1,0 +1,15 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    border: 1em solid orange;
+    flex-wrap: wrap;
+    width: fit-content;
+    margin: auto;
+}
+
+.container > div{
+    background-color: orange;
+    width: 10em;
+    height: 100vh;
+    text-align: center;
+}
