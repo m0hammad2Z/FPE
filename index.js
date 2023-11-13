@@ -1,4 +1,10 @@
 
+function linkInfo(name, link, type){
+    this.taskName = name;
+    this.taskLink = link;
+    this.taskType = type;
+}
+
 const taskTypes = {
     html: "HTML",
     css: "CSS",
@@ -9,12 +15,6 @@ const iconType = {
     html: "fa-html5",
     css: "fa-css3-alt",
     js: "fa-js-square",
-}
-
-function linkInfo(name, link, type){
-    this.taskName = name;
-    this.taskLink = link;
-    this.taskType = type;
 }
 
 const links = [
@@ -60,7 +60,6 @@ const links = [
 ]
 
 
-
 function createTaskHolder(taskInfo, iconType){
     const taskHolder = document.createElement("div");
     taskHolder.classList.add("task-holder");
@@ -86,8 +85,6 @@ function createTaskHolder(taskInfo, iconType){
 
     return taskHolder;
 }
-
-
 
 for(let i = 0; i < links.length; i++){
     switch(links[i].taskType){
@@ -117,5 +114,11 @@ function closeModal(){
     modal.style.display = "none";
 }
 
-document.querySelector(".close").addEventListener("click", closeModal);
 
+function runJavascript(link){
+    
+}
+
+import * as Task1 from "./js/Task1/Part 1/index.js";
+
+Task1.run();

@@ -20,7 +20,7 @@ function doubleNumbers(arr){
     return arr.map(function(num){
         return num * 2;
     })  
-  }
+}
   
   /*
    * Exercise 2 : 
