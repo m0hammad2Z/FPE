@@ -121,4 +121,3 @@ function runJavascript(link){
 
 import * as Task1 from "./js/Task1/Part 1/index.js";
 
-Task1.run();
