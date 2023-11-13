@@ -29,7 +29,7 @@ else {
             default:
                 console.log("Invalid operation");
         }
-    }
+}
 
 function AddHTML() {
     let op = document.createElement("p");
