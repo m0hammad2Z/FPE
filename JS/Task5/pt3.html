@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5 - Part 3</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div>
+        <label for="password">password(6 char)</label><input type="password" name="password" id="password">
+        <br>
+        <label for="rpassword">repeat password</label><input type="password" name="rpassword" id="rpassword">
+    </div>
+
+    <script>
+        var password = document.getElementById('password');
+        var rpassword = document.getElementById('rpassword');
+
+        password.addEventListener('keyup', function(){
+            if(password.value.length < 6){
+                password.style.border = '1px solid red';
+                password.style.backgroundColor = 'red';
+            }else{
+                password.style.border = '1px solid black';
+                password.style.backgroundColor = 'transparent';
+            }
+        });
+
+        rpassword.addEventListener('keyup', function(){
+            if(rpassword.value != password.value){
+                rpassword.style.border = '1px solid red';
+                rpassword.style.backgroundColor = 'red';
+            }else{
+                rpassword.style.border = '1px solid black';
+                rpassword.style.backgroundColor = 'transparent';
+            }
+        })
+
+    </script>
+</body>
+</html>

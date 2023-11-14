@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5 - Part 3</title>
+    <style>
+        .top-sec{
+            background-color: #f1f1f1;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .bottom-sec{
+            background-color: #f1f1f1;
+            padding: 20px;
+            text-align: center;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-sec">
+        <h1>What is lorem ipsum?</h1>
+        <button class="show-btn">Show</button>
+    </div>
+
+    <div class="bottom-sec">
+        <p>Lorem ipsum dolor sit am et, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce euismod magna et sapien varius, ut ullamcorper nisi finibus. Aliquam erat volutpat. Donec nec dolor vitae diam euismod aliquam. Sed euismod, diam quis aliquam pulvinar, nunc nisi aliquet sapien, vel tincidunt enim la oris vitae eros. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce euismod magna et sapien varius, ut ullamcorper nisi finibus. Aliquam erat volutpat. Donec nec dolor vitae diam euismod aliquam. Sed euismod, diam quis aliquam pulvinar, nunc nisi aliquet sapien, vel tincidunt enim la oris vitae eros.</p>
+        <button class="hide-btn">Show</button>
+    </div>
+
+    <script>
+        var showBtn = document.querySelector('.show-btn');
+        var hideBtn = document.querySelector('.hide-btn');
+        var bottomSec = document.querySelector('.bottom-sec');
+
+        showBtn.addEventListener('click', function(){
+            bottomSec.style.display = 'block';
+        });
+
+        hideBtn.addEventListener('click', function(){
+            bottomSec.style.display = 'none';
+        });
+
+    </script>
+</body>
+</html>

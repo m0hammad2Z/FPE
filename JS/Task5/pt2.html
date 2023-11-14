@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5 - Part 2</title>
+    <style>
+        div{
+          
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <select name="flags" id="flags">
+            <option value="Norway">Norway</option>
+            <option value="Sweden">Sweden</option>
+            <option value="Denmark">Denmark</option>
+            <option value="Finland">Finland</option>
+        </select>
+    </div>
+
+    <div class="show-sec">
+        <img src="" alt="" id="flag">
+    </div>
+
+    <script>
+        fl = [
+            'https://flagpedia.net/data/flags/w580/no.webp',
+            'https://flagpedia.net/data/flags/w580/se.webp',
+            'https://flagpedia.net/data/flags/w580/dk.webp',
+            'https://flagpedia.net/data/flags/w580/fi.webp'
+        ]
+
+        var flags = document.querySelector('#flags');
+        flags.addEventListener('change', function(){
+            document.getElementById('flag').src = fl[flags.selectedIndex];
+        });
+
+    </script>
+</body>
+</html>
