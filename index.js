@@ -1,3 +1,5 @@
+import * as task1 from './js/Task1/index.js';
+
 
 function linkInfo(name, link, type){
     this.taskName = name;
@@ -57,6 +59,14 @@ const links = [
     new linkInfo("Task 6 - 3", "css/Task6/Screen3/scn.html", taskTypes.css),
     new linkInfo("Task 6 - 4", "css/Task6/Screen4/scn.html", taskTypes.css),
     new linkInfo("Task 6 - 5", "css/Task6/Screen5/scn.html", taskTypes.css),    
+
+    
+    // JavaScript tasks
+    new linkInfo("Task 1 - 1", task1.operationOnTwoNumbers, taskTypes.js),
+    new linkInfo("Task 1 - 2", task1.gradeFun, taskTypes.js),
+    new linkInfo("Task 1 - 3", task1.containPI, taskTypes.js),
+    new linkInfo("Task 1 - 4", task1.helloGoodby, taskTypes.js),
+
 ]
 
 
@@ -72,16 +82,21 @@ function createTaskHolder(taskInfo, iconType){
     taskIconDiv.appendChild(taskIcon);
 
     const taskNameDiv = document.createElement("div");
-    const taskName = document.createElement("a");
+    const taskName = document.createElement("h3");
     taskNameDiv.appendChild(taskName);
     taskName.innerHTML = taskInfo.taskName;
 
     taskHolder.appendChild(taskIconDiv);
     taskHolder.appendChild(taskNameDiv);
 
+    
     taskHolder.addEventListener("click", function(){
-        showModal(taskInfo)
+        if(taskInfo.taskType != taskTypes.js)
+            showModal(taskInfo);
+        else
+            taskInfo.taskLink();
     });
+    
 
     return taskHolder;
 }
@@ -107,6 +122,7 @@ function showModal(taskInfo){
     document.getElementById('title').innerHTML = `${taskInfo.taskType} - ${taskInfo.taskName}`;
     // set the iframe source
     document.querySelector(".modal iframe").src = taskInfo.taskLink;
+    document.getElementById('link').href = taskInfo.taskLink;
 }
 
 function closeModal(){
@@ -114,10 +130,6 @@ function closeModal(){
     modal.style.display = "none";
 }
 
+document.querySelector(".modal .close").addEventListener("click", closeModal);
 
-function runJavascript(link){
-    
-}
-
-import * as Task1 from "./js/Task1/Part 1/index.js";
 

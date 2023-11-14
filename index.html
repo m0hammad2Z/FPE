@@ -2,128 +2,42 @@
 
 <head>
     <title>Tasks</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-
-<style>
-    :root {
-        --color1: #00A9FF;
-        --color2: #89CFF3;
-        --color3: #A0E9FF;
-        --color4: #CDF5FD;
-        --white: #FFFFFF;
-        --gray: #c0c0c0dd;
-        --light-gray: rgba(245, 245, 245, 0.604);
-        --modal-background: rgba(0,0,0,0.4)
-    }
-
-    html {
-        scroll-behavior: smooth;
-    }
-
-    body {
-        /* background-image: linear-gradient(140deg , var(--color1) 0%, var(--color2) 100%); */
-        background-color: var(--color1);
-        font-family: Arial, Helvetica, sans-serif;
-        color: white;
-        letter-spacing: 0.1em;
-    }
-
-    .container {
-        display: flex;
-        position: sticky;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        width: 15%;
-        margin-left: 1em;
-
-    }
-
-    .container>div {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 5em;
-        width: 100%;
-        margin: 0 auto;
-        border: 1px solid black;
-        padding: 1em 2em;
-        margin-bottom: 2em;
-    }
-
-    .container>div>div:hover {
-        background-color: var(--color4);
-        cursor: pointer;
-    }
-
-    .container>div>.title {
-        width: 100%;
-        text-align: center;
-
-    }
-
-    .modal {
-        position: fixed;
-        z-index: 1;
-        padding-top:3em ;
-        display: none;
-        background-color: var(--modal-background);
-        width: 100%;
-        height: 100%;
-        left: 0;
-        top: 0;
-    }
-
-    .modal  .modal-content{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        margin: auto;
-        background-color: var(--gray);
-        width: 80vw;
-        height: 90vh;
-        border-radius: 1em;
-        padding: 1em 5em;
-        box-sizing: border-box;
-    }
-
-    .modal  .modal-header{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        height: 10%;
-    }
-
-    .modal  .modal-body{
-        width: 100%;
-        height: 90%;
-    }
-
-    .modal .close {
-        color: white;
-        font-size: 2em;
-        font-weight: bold;
-        cursor: pointer;
-    }
-
-</style>
 
 <body>
 
+
+    <div class="home">
+        <div class="title">
+            <h1>Hi! <span class="hand">👋</span></h1>
+            <h4>Here you can find some tasks that I've done.</h4>
+        </div>
+
+        <div class="btns">
+            <a id="explore-btn" href="#html-tasks">HTML</a>
+            <a id="random-btn" href="#css-tasks" >CSS</a>
+            <a id="explore-btn" href="#js-tasks">JS</a>
+        </div>
+    </div>
+    <hr>
     <div class="container" id="container">
         <div id="html-tasks">
             <div class="title">
                 <h2>HTML Tasks</h2>
             </div>
         </div>
+        <hr>
         <div id="css-tasks">
             <div class="title">
                 <h2>CSS Tasks</h2>
             </div>
         </div>
+        <hr>
         <div id="js-tasks">
             <div class="title">
                 <h2>JS Tasks</h2>
@@ -134,16 +48,26 @@
     <div class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 id="title">Task</h2>
-                <span class="close" onclick="closeModal()">&times;</span>
+                <div class="left">
+                    <h1 id="title">Task</h1>
+                    <a href="" id="link">See it in another tab <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <span class="close">&times;</span>
             </div>
             <div class="modal-body">
-                <iframe src="css/Task4/Screen2/scn.html" width="100%" height="100%" frameborder="0"></iframe>
+                <iframe src="" width="100%" height="100%" frameborder="0"></iframe>
             </div>
         </div>
     </div>
 
-    <script src="index.js"></script>
+    
+
+    <div class="footer">
+        <hr>
+        <p>© 2021 - All rights reserved</p>
+    </div>
+
+    <script type="module" src="index.js"></script>
 
 </body>
 
