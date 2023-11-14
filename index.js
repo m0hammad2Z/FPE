@@ -1,4 +1,4 @@
-import * as task1 from './js/Task1/index.js';
+import * as task1 from '/js/Task1/index.js';
 
 
 function linkInfo(name, link, type){
