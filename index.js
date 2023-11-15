@@ -1,4 +1,8 @@
-import * as task1 from './JS/Task1/index.js';
+import {task1} from './JS/Task1/index.js';
+import { loopsTask2 } from './js/Task2/loops.js';
+import { functionsTask2 } from './js/Task2/function1.js';
+import { mappingTask4 } from './js/Task4/.map.js';
+import { foreachTask4 } from './js/Task4/for_each.js';
 
 
 function linkInfo(name, link, type){
@@ -62,11 +66,11 @@ const links = [
 
     
     // JavaScript tasks
-    new linkInfo("Task 1 - 1", task1.operationOnTwoNumbers, taskTypes.js),
-    new linkInfo("Task 1 - 2", task1.gradeFun, taskTypes.js),
-    new linkInfo("Task 1 - 3", task1.containPI, taskTypes.js),
-    new linkInfo("Task 1 - 4", task1.helloGoodby, taskTypes.js),
-
+    new linkInfo("Task 1", task1 , taskTypes.js),
+    new linkInfo("Functions", functionsTask2, taskTypes.js),
+    new linkInfo("Loops", loopsTask2, taskTypes.js),
+    new linkInfo("Mapping", mappingTask4, taskTypes.js),
+    new linkInfo("ForEach", foreachTask4, taskTypes.js)
 ]
 
 
@@ -86,18 +90,29 @@ function createTaskHolder(taskInfo, iconType){
     taskNameDiv.appendChild(taskName);
     taskName.innerHTML = taskInfo.taskName;
 
+    const showMoreDiv = document.createElement("div");
+    showMoreDiv.classList.add("show-more");
+    const p = document.createElement("p");
+    p.innerHTML = "Show More";
+    showMoreDiv.appendChild(p);
+
+    taskHolder.addEventListener("mouseover", function(){
+        showMoreDiv.style.display = "block";
+    });
+
+    taskHolder.addEventListener("mouseout", function(){
+        showMoreDiv.style.display = "none";
+    });
+
     taskHolder.appendChild(taskIconDiv);
     taskHolder.appendChild(taskNameDiv);
+    taskHolder.appendChild(showMoreDiv);
 
     
     taskHolder.addEventListener("click", function(){
-        if(taskInfo.taskType != taskTypes.js)
             showModal(taskInfo);
-        else
-            taskInfo.taskLink();
     });
     
-
     return taskHolder;
 }
 
@@ -110,7 +125,8 @@ for(let i = 0; i < links.length; i++){
             document.getElementById("css-tasks").appendChild(createTaskHolder(links[i], iconType.css));
             break;
         case taskTypes.js:
-            document.getElementById("js-tasks").appendChild(createTaskHolder(links[i], iconType.js));
+            let jsContainer = document.getElementById("js-tasks");
+            jsContainer.appendChild(createTaskHolder(links[i], iconType.js));
             break;
     }
 }
@@ -120,9 +136,24 @@ function showModal(taskInfo){
     modal.style.display = "block";
 
     document.getElementById('title').innerHTML = `${taskInfo.taskType} - ${taskInfo.taskName}`;
-    // set the iframe source
-    document.querySelector(".modal iframe").src = taskInfo.taskLink;
-    document.getElementById('link').href = taskInfo.taskLink;
+    
+    
+    if(taskInfo.taskType == taskTypes.js){
+        document.getElementById('js-sub-task-holder-list').style.display = "block";
+        document.getElementById('js-run-button').style.display = "block";
+        document.getElementById('js-sub-task-holder-list').innerHTML = "";
+        document.getElementById('link').style.display = "none";
+        document.querySelector(".modal iframe").style.display = "none";
+        document.querySelector(".modal .modal-body").appendChild(makeJSTaskHolder(taskInfo.taskLink));
+    }
+    else{
+        document.getElementById('js-sub-task-holder-list').style.display = "none";
+        document.getElementById('js-run-button').style.display = "none";
+        document.getElementById('link').style.display = "block";
+        document.querySelector(".modal iframe").style.display = "block";
+        document.querySelector(".modal iframe").src = taskInfo.taskLink;
+        document.getElementById('link').href = taskInfo.taskLink;
+    }
 }
 
 function closeModal(){
@@ -132,4 +163,27 @@ function closeModal(){
 
 document.querySelector(".modal .close").addEventListener("click", closeModal);
 
+
+function makeJSTaskHolder(callBacFunctionsList){
+    const list = document.getElementById("js-sub-task-holder-list");
+
+    callBacFunctionsList.forEach((fun) => {
+        const option = document.createElement("option");
+        option.textContent = fun.name.toUpperCase();
+        list.appendChild(option);
+    });
+    
+    const runButton = document.getElementById("js-run-button");
+
+    runButton.addEventListener("click", function(){
+        callBacFunctionsList[list.selectedIndex]();
+    })
+
+    const subtaskHolder = document.createElement("div");
+    subtaskHolder.classList.add("sub-task-holder");
+    subtaskHolder.appendChild(list);
+    subtaskHolder.appendChild(runButton);
+
+    return subtaskHolder;
+}
 

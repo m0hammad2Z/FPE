@@ -1,5 +1,5 @@
 // 1
-export function operationOnTwoNumbers(){
+function operationOnTwoNumbers(){
     let operation = prompt("Enter an operation: +, -, *, /");
     let num1 = prompt("Enter a number");
     let num2 = prompt("Enter another number");
@@ -36,7 +36,7 @@ export function operationOnTwoNumbers(){
 
 
 // 2
-export function gradeFun(){
+function gradeFun(){
     var m = prompt("Enter your mark");
     m = parseInt(m);
 
@@ -73,7 +73,7 @@ export function gradeFun(){
 }
 
 // 3
-export function containPI(){
+function containPI(){
     const pi = Math.PI;
     const radius = prompt("Enter the radius of the circle: ");
 
@@ -90,7 +90,7 @@ export function containPI(){
 }
 
 // 4
-export function helloGoodby(){
+function helloGoodby(){
     let x = prompt("Enter a number");
     let y = prompt("Enter another number");
 
@@ -118,3 +118,5 @@ export function helloGoodby(){
     }
     }
 }
+
+export let task1 = [operationOnTwoNumbers, gradeFun, containPI, helloGoodby]

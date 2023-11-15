@@ -254,3 +254,108 @@ function doubleNumbers(arr){
    function extractFullName(){
         return arr.map((val) => val.first + " " + val.last); 
    }
+
+  /*
+ * Exercise 1
+ */
+function testExercise1() {
+  const result = doubleNumbers([2, 5, 100]);
+  console.log(result);
+}
+
+/*
+* Exercise 2
+*/
+function testExercise2() {
+  const result = stringItUp([2, 5, 100]);
+  console.log(result);
+}
+
+/*
+* Exercise 3
+*/
+function testExercise3() {
+  const result = capitalizeNames(["john", "JACOB", "jinGleHeimer", "schmidt"]);
+  console.log(result);
+}
+
+/*
+* Exercise 4
+*/
+function testExercise4() {
+  const result = namesOnly([
+      { name: "Angelina Jolie", age: 80 },
+      { name: "Eric Jones", age: 2 },
+      { name: "Paris Hilton", age: 5 },
+      { name: "Kayne West", age: 16 },
+      { name: "Bob Ziroll", age: 100 }
+  ]);
+  console.log(result);
+}
+
+/*
+* Exercise 5
+*/
+function testExercise5() {
+  const result = makeStrings([
+      { name: "Angelina Jolie", age: 80 },
+      { name: "Eric Jones", age: 2 },
+      { name: "Paris Hilton", age: 5 },
+      { name: "Kayne West", age: 16 },
+      { name: "Bob Ziroll", age: 100 }
+  ]);
+  console.log(result);
+}
+
+/*
+* Exercise 6
+*/
+function testExercise6() {
+  const result = readyToPutInTheDOM([
+      { name: "Angelina Jolie", age: 80 },
+      { name: "Eric Jones", age: 2 },
+      { name: "Paris Hilton", age: 5 },
+      { name: "Kayne West", age: 16 },
+      { name: "Bob Ziroll", age: 100 }
+  ]);
+  console.log(result);
+}
+
+/*
+* Exercise 7
+*/
+function testExercise7() {
+  const result = doubleValues([1, 2, 3]);
+  console.log(result);
+}
+
+/*
+* Exercise 8
+*/
+function testExercise8() {
+  const result = valTimesIndex([1, 2, 3]);
+  console.log(result);
+}
+
+/*
+* Exercise 9
+*/
+function testExercise9() {
+  const result = extractKey([{ name: 'Elie' }, { name: 'Tim' }, { name: 'Matt' }, { name: 'Colt' }], 'name');
+  console.log(result);
+}
+
+/*
+* Exercise 10
+*/
+function testExercise10() {
+  const result = extractFullName([
+      { first: 'Elie', last: "Schoppik" },
+      { first: 'Tim', last: "Garcia" },
+      { first: 'Matt', last: "Lane" },
+      { first: 'Colt', last: "Steele" }
+  ]);
+  console.log(result);
+}
+
+export let mappingTask4 = [testExercise1, testExercise2, testExercise3, testExercise4, testExercise5, testExercise6, testExercise7, testExercise8, testExercise9, testExercise10 ];

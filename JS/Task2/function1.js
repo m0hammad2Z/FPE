@@ -226,7 +226,7 @@ Ex: smallerNubmer(5,3,3)
 => 3
 
 */
-function largerNubmer(x, y) {
+function smallerNubmer(x, y) {
   return Math.min(x, y);
 }
 
@@ -505,3 +505,237 @@ function resetCounter(){
   cntr = 1;
   return cntr;
 }
+
+
+/*
+1
+*/
+function testQuestion1() {
+    const result = tellFortune('software engineer', 'Jordan', 'Alice', 3);
+    console.log(result);
+    alert(result);
+}
+
+/*
+2
+*/
+function testQuestion2() {
+    const result = calculateDogAge(1);
+    console.log(result);
+    alert(result);
+}
+
+/*
+3
+*/
+function testQuestion3() {
+    const result = calculateSupply(30, 3);
+    console.log(result);
+    alert(result);
+}
+
+/*
+4
+*/
+function testQuestion4() {
+    const result = greet("Adam");
+    console.log(result);
+    alert(result);
+}
+
+/*
+5
+*/
+function testQuestion5() {
+    // The correct answer is 3. x is not defined
+    console.log("Question 5: " + "3. x is not defined");
+    alert("Question 5: " + "3. x is not defined");
+}
+
+/*
+6
+*/
+function testQuestion6() {
+    const result1 = double1(5);
+    const result2 = double2(5);
+    const result3 = double3(5);
+    console.log(result1, result2, result3);
+    alert(result1);
+    alert(result2);
+    alert(result3);
+}
+
+/*
+7
+*/
+function testQuestion7() {
+    const result = cube(4);
+    console.log(result);
+    alert(result);
+}
+
+/*
+8
+*/
+function testQuestion8() {
+    const result = multiply(3, 4);
+    console.log(result);
+    alert(result);
+}
+
+/*
+9
+*/
+function testQuestion9() {
+    const result1 = canIGetADrivingLicense(21);
+    const result2 = canIGetADrivingLicense(17);
+    const result3 = canIGetADrivingLicense(20);
+    console.log(result1, result2, result3);
+    alert(result1);
+    alert(result2);
+    alert(result3);
+}
+
+/*
+10
+*/
+function testQuestion10() {
+    const result1 = sameLength("tree", "clue");
+    const result2 = sameLength("tree", "car");
+    console.log(result1, result2);
+    alert(result1);
+    alert(result2);
+}
+
+/*
+11
+*/
+function testQuestion11() {
+    const result = largerNubmer(5, 6);
+    console.log(result);
+    alert(result);
+}
+
+/*
+12
+*/
+function testQuestion12() {
+    const result = smallerNubmer(8, 6, 7);
+    console.log(result);
+    alert(result);
+}
+
+/*
+13
+*/
+function testQuestion13() {
+    const result = shorterString("air", "school", "car", "by", "github");
+    console.log(result);
+    alert(result);
+}
+
+/*
+14
+*/
+function testQuestion14() {
+    const result = longerString("air", "school", "car", "github");
+    console.log(result);
+    alert(result);
+}
+
+/*
+15
+*/
+function testQuestion15() {
+    const result = isEven(1);
+    console.log(result);
+    alert(result);
+}
+
+/*
+16
+*/
+function testQuestion16() {
+    const result = isOdd(4);
+    console.log(result);
+    alert(result);
+}
+
+/*
+17
+*/
+function testQuestion17() {
+    const result = positive(-5);
+    console.log(result);
+    alert(result);
+}
+
+/*
+18
+*/
+function testQuestion18() {
+    const result = fullName("Adam", "McCallen");
+    console.log(result);
+    alert(result);
+}
+
+/*
+19
+*/
+function testQuestion19() {
+    const result = average(1, 2, 3, 4, 5);
+    console.log(result);
+    alert(result);
+}
+
+/*
+20
+*/
+function testQuestion20() {
+    const result = randomNumber();
+    console.log(result);
+    alert(result);
+}
+
+/*
+21
+*/
+function testQuestion21() {
+    const result = randomBetweenNumbers(1, 8);
+    console.log(result);
+    alert(result);
+}
+
+/*
+22
+*/
+function testQuestion22() {
+    const result = scoreInUniversty(96);
+    console.log(result);
+    alert(result);
+}
+
+/*
+23
+*/
+function testQuestion23() {
+    const result = counter();
+    console.log(result);
+    alert(result);
+}
+
+/*
+24
+*/
+function testQuestion24() {
+    const result1 = counter();
+    const result2 = counter();
+    const result3 = counter();
+    console.log(result1, result2, result3);
+
+    const resetResult = resetCounter();
+    console.log(resetResult);
+    alert(resetResult);
+}
+
+export let functionsTask2 = [testQuestion1, testQuestion2, testQuestion3, testQuestion4, testQuestion5, testQuestion6, testQuestion7, testQuestion8, testQuestion9, testQuestion10, testQuestion11, testQuestion12, testQuestion13, testQuestion14, testQuestion15, testQuestion16, testQuestion17, testQuestion18, testQuestion19, testQuestion20, testQuestion21, testQuestion22, testQuestion23, testQuestion24]

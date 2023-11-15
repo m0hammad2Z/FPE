@@ -13,15 +13,13 @@
 *
 */
 function doubleValues(arr){
-   a = []
+   let a = []
     arr.forEach(function(num){
          a.push(num * 2)
     })
     return a;
 }
 
-//Test
-console.log(doubleValues([1,2,3]));
 
 /*
 * Exercise 2:
@@ -119,3 +117,81 @@ function vowelCount(str){
     })
     return obj;
 }
+
+// ----------------test-----------------
+
+/*
+ * Exercise 1
+ */
+function testExercise1() {
+    const input1 = prompt("Enter an array of numbers (comma-separated):");
+    const arr1 = input1.split(',').map(Number);
+    const result1 = doubleValues(arr1);
+    console.log(result1);
+
+    const input2 = prompt("Enter another array of numbers (comma-separated):");
+    const arr2 = input2.split(',').map(Number);
+    const result2 = doubleValues(arr2);
+    console.log(result2);
+}
+
+/*
+ * Exercise 2
+ */
+function testExercise2() {
+    const input1 = prompt("Enter an array of numbers (comma-separated):");
+    const arr1 = input1.split(',').map(Number);
+    const result1 = onlyEvenValues(arr1);
+    console.log(result1);
+
+    const input2 = prompt("Enter another array of numbers (comma-separated):");
+    const arr2 = input2.split(',').map(Number);
+    const result2 = onlyEvenValues(arr2);
+    console.log(result2);
+}
+
+/*
+ * Exercise 3
+ */
+function testExercise3() {
+    const input1 = prompt("Enter an array of strings (comma-separated):");
+    const arr1 = input1.split(',');
+    const result1 = showFirstAndLast(arr1);
+    console.log(result1);
+
+    const input2 = prompt("Enter another array of strings (comma-separated):");
+    const arr2 = input2.split(',');
+    const result2 = showFirstAndLast(arr2);
+    console.log(result2);
+}
+
+/*
+ * Exercise 4
+ */
+function testExercise4() {
+    const inputArray = [
+        { name: 'Elie' },
+        { name: 'Tim' },
+        { name: 'Matt' },
+        { name: 'Colt' }
+    ];
+
+    const key = prompt("Enter the key:");
+    const value = prompt("Enter the value:");
+    
+    const result = addKeyAndValue(inputArray, key, value);
+    console.log(result);
+}
+
+/*
+ * Exercise 5
+ */
+function testExercise5() {
+    const input = prompt("Enter a string:");
+    const result = vowelCount(input);
+    console.log(result);
+}
+
+
+
+export let foreachTask4 = [ testExercise1, testExercise2, testExercise3, testExercise4, testExercise5 ]
