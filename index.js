@@ -1,8 +1,8 @@
 import {task1} from './JS/Task1/index.js';
-import { loopsTask2 } from './js/Task2/loops.js';
-import { functionsTask2 } from './js/Task2/function1.js';
-import { mappingTask4 } from './js/Task4/.map.js';
-import { foreachTask4 } from './js/Task4/for_each.js';
+import { loopsTask2 } from './JS/Task2/loops.js';
+import { functionsTask2 } from './JS/Task2/function1.js';
+import { mappingTask4 } from './JS/Task4/.map.js';
+import { foreachTask4 } from './JS/Task4/for_each.js';
 
 
 function linkInfo(name, link, type){
