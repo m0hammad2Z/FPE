@@ -232,10 +232,12 @@ hr{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1em;
+    gap: 10em;
     width: 100%;
     height: 100vh;
 }
+
+
 
 .home > .title> h1{
     font-size: 5em;
@@ -355,5 +357,19 @@ option{
     text-align: center;
     box-sizing: border-box;
     cursor: pointer;
+    
+}
+
+@media screen and (max-width: 1000px) {
+
+    .home .btns {
+        width: 100%;
+        gap: 3em;
+        flex-direction: column;
+    }
+
+    .home .btns a{
+        width: 40%;
+    }
     
 }
