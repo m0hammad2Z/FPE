@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+                
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+        }
+
+        .card{
+            width: 300px;
+            height: 300px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            padding: 20px;
+            margin: 20px;
+        }
+
+        input{
+            width: 100%;
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #ccc;
+        }
+
+        table{
+            margin-top: 80px;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td, th{
+            
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .show-table{
+            width: 100%;
+            padding: 0.4em 0em;
+            font-size: 3em;
+            background-color: rgb(13, 0, 255);
+            color: #fff;
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <button class="show-table">Show table</button>
+    
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Mobile</th>
+            <th>email</th>
+        </tr>
+    </table>
+
+    <form >
+    <script>
+        var showTable = document.querySelector('.show-table');
+        
+        table = document.querySelector('table');
+        table.style.display = 'noen';
+
+        showTable.addEventListener('click', function(){
+            table.style.opacity = '1';
+        });
+
+        showTable.addEventListener('dblclick', function(){
+            table.style.opacity = '0';
+        });
+     
+
+        fetch('message.json').then((data) =>{
+            console.log(data);
+            return data.json();
+        }).then((data)=>{
+            data.users.forEach((item)=>{
+                var tr = document.createElement('tr');
+                var td1 = document.createElement('td');
+                var td2 = document.createElement('td');
+                var td3 = document.createElement('td');
+
+                td1.innerHTML = item.firstName;
+                td2.innerHTML = item.phone;
+                td3.innerHTML = item.email;
+
+                tr.appendChild(td1);
+                tr.appendChild(td2);
+                tr.appendChild(td3);
+
+                table.appendChild(tr);
+                
+            });
+        })
+
+        
+
+        // document.getElementById('clickme').addEventListener('click', function(e){
+        //     e.preventDefault();
+        //     var name = document.getElementById('name').value;
+        //     var email = document.getElementById('email').value;
+        //     var mobile = document.getElementById('mobile').value;
+
+        //     var tr = document.createElement('tr');
+        //     var td1 = document.createElement('td');
+        //     var td2 = document.createElement('td');
+        //     var td3 = document.createElement('td');
+
+        //     td1.innerHTML = name;
+        //     td2.innerHTML = email;
+        //     td3.innerHTML = mobile;
+
+        //     tr.appendChild(td1);
+        //     tr.appendChild(td2);
+        //     tr.appendChild(td3);
+
+        //     table.appendChild(tr);
+        // })
+
+
+
+
+    </script>
+
+</body>
+</html>
