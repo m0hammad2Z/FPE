@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+                
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                width: 100vw;
+                margin: 0;
+                padding: 0;
+                font-family: sans-serif;
+        }
+
+    </style>
+</head>
+<body>
+
+    <form>
+        <input type="text" id="subject" placeholder="subject">
+        <input type="text" id="description" placeholder="description">
+        <input type="text" id="user-types" placeholder="user type">
+        <input type="text" id="technology-used" placeholder="technology Used">
+        <input type="submit" value="Submit">
+    
+    <script>
+        document.getElementById('subject').value = sessionStorage.subject == undefined ? "" : sessionStorage.subject;
+        document.getElementById('description').value = sessionStorage.description == undefined ? "" : sessionStorage.description;
+        document.getElementById('user-types').value = sessionStorage.userTypes == undefined ? "" : sessionStorage.userTypes;
+        document.getElementById('technology-used').value = sessionStorage.technologyUsed == undefined ? "" : sessionStorage.technologyUsed;
+
+
+
+        document.querySelector('input[type="submit"]').addEventListener('click', function(){
+            sessionStorage.subject = document.getElementById('subject').value;
+            sessionStorage.description = document.getElementById('description').value;
+            sessionStorage.userTypes = document.getElementById('user-types').value;
+            sessionStorage.technologyUsed = document.getElementById('technology-used').value;
+        })
+
+        function createCard(){
+            var card = document.createElement('div');
+            card.classList.add('card');
+
+            var subject = document.createElement('h2');
+            subject.textContent = sessionStorage.subject;
+
+            var description = document.createElement('p');
+            description.textContent = sessionStorage.description;
+
+            var userTypes = document.createElement('p');
+            userTypes.textContent = sessionStorage.userTypes;
+
+            var technologyUsed = document.createElement('p');
+            technologyUsed.textContent = sessionStorage.technologyUsed;
+
+            card.appendChild(subject);
+            card.appendChild(description);
+            card.appendChild(userTypes);
+            card.appendChild(technologyUsed);
+
+            document.body.appendChild(card);
+        }
+
+
+        if(sessionStorage.subject){
+            createCard();
+        }
+
+    </script>
+
+</body>
+</html>

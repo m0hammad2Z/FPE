@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" name="myname" id="myname" placeholder="Name"><br>
+        <input type="number" name="myage" id="myage" placeholder="Age"><br>
+        <label>male</label><input type="radio" name="gender" id="male">
+        <label>female</label><input type="radio" name="gender" id="female">
+        <input type="text" name="mydescription" id="mydescription" placeholder="Description"><br>
+        <input type="text" name="mymajor" id="mymajor" placeholder="Major"><br>
+        <input type="text" name="myuniversity" id="myuniversity" placeholder="University"><br>
+        <label>c++</label><input type="checkbox" placeholder="C++" id="cplus">
+        <label for="java">java</label><input type="checkbox" placeholder="Java" id="java">
+        <label for="python">python</label><input id="python" type="checkbox" placeholder="Python">
+
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+
+                document.getElementById('myname').value = localStorage.name == undefined ? "" : localStorage.name;
+                document.getElementById('myage').value = localStorage.age;
+                document.getElementById('mydescription').value = localStorage.description == undefined ? "" : localStorage.description;
+                document.getElementById('mymajor').value = localStorage.major == undefined ? "" : localStorage.major;
+                document.getElementById('myuniversity').value = localStorage.univeristy == undefined ? "" : localStorage.univeristy;
+                document.getElementById('cplus').checked = localStorage.cplus == "true" ? true : false;
+                document.getElementById('java').checked = localStorage.java == "true" ? true : false;
+                document.getElementById('python').checked = localStorage.python == "true" ? true : false;
+                document.getElementById('male').checked = localStorage.male == "true" ? true : false;
+                document.getElementById('female').checked = localStorage.female == "true" ? true : false
+
+
+            document.querySelector('input[type="submit"]').addEventListener('click', function(){
+                localStorage.name = document.getElementById('myname').value;
+                localStorage.age = document.getElementById('myage').value;
+                localStorage.description = document.getElementById('mydescription').value;
+                localStorage.major = document.getElementById('mymajor').value;
+                localStorage.univeristy = document.getElementById('myuniversity').value;
+                localStorage.cplus = document.getElementById('cplus').checked;
+                localStorage.java = document.getElementById('java').checked;
+                localStorage.python = document.getElementById('python').checked;
+                localStorage.male = document.getElementById('male').checked;
+                localStorage.female = document.getElementById('female').checked;
+            })
+
+            function createCard(){
+                var card = document.createElement('div');
+                card.classList.add('card');
+
+                var name = document.createElement('h2');
+                name.textContent = localStorage.name;
+
+                var age = document.createElement('p');
+                age.textContent = localStorage.age;
+
+                var description = document.createElement('p');
+                description.textContent = localStorage.description;
+
+                var major = document.createElement('p');
+                major.textContent = localStorage.major;
+
+                var university = document.createElement('p');
+                university.textContent = localStorage.univeristy;
+
+                var cplus = document.createElement('p');
+                cplus.textContent = localStorage.cplus;
+
+                var java = document.createElement('p');
+                java.textContent = localStorage.java;
+
+                var python = document.createElement('p');
+                python.textContent = localStorage.python;
+
+                card.appendChild(name);
+                card.appendChild(age);
+                card.appendChild(description);
+                card.appendChild(major);
+                card.appendChild(university);
+                card.appendChild(cplus);
+                card.appendChild(java);
+                card.appendChild(python);
+
+                document.body.appendChild(card);
+
+            }
+
+            if(localStorage.name){
+                createCard();
+            }
+
+    </script>
+    
+</body>
+</html>

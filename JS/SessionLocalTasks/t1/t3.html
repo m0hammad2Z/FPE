@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form id="register">
+        <h1>Register</h1>
+        <input type="text" id="username" placeholder="Username"><br>
+        <input type="password" id="password" placeholder="Password"><br>
+        <input type="password"id="confirm-password" placeholder="Confirm Password"><br>
+        <input type="submit" value="Submit" id="register">
+    </form>
+
+    <form >
+        <h1>login</h1>
+        <input type="text" id="loginusername" placeholder="Username"><br>
+        <input type="password" id="loginpassword" placeholder="Password"><br>
+        <input type="submit" value="Submit" id="login">
+    </form>
+    <script>
+
+        document.getElementById('register').addEventListener('submit', function(e){
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirm-password').value;
+
+            if(password == confirmPassword){
+                localStorage.username = username;
+                localStorage.password = password;
+                alert('Registered Successfully');
+            }else{
+                alert('Passwords do not match');
+            }
+        })
+
+        document.getElementById('login').addEventListener('click', ()=>{
+            var username = document.getElementById('loginusername').value;
+            var password = document.getElementById('loginpassword').value;
+
+            if(localStorage.username == username && localStorage.password == password){
+                alert('Login Successful');
+            }else{
+                alert('Login Failed');
+            }
+        })
+
+
+    </script>
+
+</body>
+</html>
