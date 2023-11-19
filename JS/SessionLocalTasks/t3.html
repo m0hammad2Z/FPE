@@ -1,81 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-        <style>
-        body{
-                
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                height: 100vh;
-                width: 100vw;
-                margin: 0;
-                padding: 0;
-                font-family: sans-serif;
+    <style>
+        body {
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            width: 100vw;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
         }
 
-        .card{
+        .card {
             width: 300px;
             height: 300px;
             background-color: #fff;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             padding: 20px;
             margin: 20px;
         }
 
-        input{
+        input {
             width: 100%;
             padding: 10px;
             margin: 10px;
             border: 1px solid #ccc;
         }
-
     </style>
 </head>
+
 <body>
 
-    <form id="register">
+    <form id="register-from">
         <h1>Register</h1>
-        <input type="text" id="username" placeholder="Username"><br>
+        <input type="text" id="fname" placeholder="First name"><br>
+        <label id="fname-error">Must only have letters</label><br>
+        <input type="text" id="lname" placeholder="Last name"><br>
+        <label id="lname-error">Must only have letters</label><br>
+        <input type="email" id="email" placeholder="Email"><br>
+        <label id="email-error">Must be a valid email</label><br>
+        <input type="date" name="" id="bdata">
         <input type="password" id="password" placeholder="Password"><br>
-        <input type="password"id="confirm-password" placeholder="Confirm Password"><br>
+        <label id="password-error">Must be at 8 -32 characters</label><br>
+        <input type="password" id="confirm-password" placeholder="Confirm Password"><br>
+        <label id="confirm-password-error">Does not matched</label><br>
         <input type="submit" value="Submit" id="register">
     </form>
 
-    <form >
+    <form id="login-form">
         <h1>login</h1>
-        <input type="text" id="loginusername" placeholder="Username"><br>
+        <input type="text" id="loginemail" placeholder="Email"><br>
         <input type="password" id="loginpassword" placeholder="Password"><br>
         <input type="submit" value="Submit" id="login">
     </form>
     <script>
 
-        document.getElementById('register').addEventListener('submit', function(e){
-            var username = document.getElementById('username').value;
-            var password = document.getElementById('password').value;
-            var confirmPassword = document.getElementById('confirm-password').value;
+        var fname = document.getElementById('fname');
+        var lname = document.getElementById('lname');
+        var email = document.getElementById('email');
+        var bdata = document.getElementById('bdata');
+        var password = document.getElementById('password');
+        var confirm_password = document.getElementById('confirm-password');
 
-            if(password == confirmPassword){
-                localStorage.username = username;
-                localStorage.password = password;
-                alert('Registered Successfully');
-            }else{
-                alert('Passwords do not match');
+        //validation
+        const letterReg = /\W/g
+
+        fname.addEventListener('keyup', function () {
+            if (letterReg.test(fname.value)) {
+                document.getElementById('fname-error').style.display = 'inline-block';
+            } else {
+                document.getElementById('fname-error').style.display = 'none';
             }
         })
 
-        document.getElementById('login').addEventListener('click', ()=>{
-            var username = document.getElementById('loginusername').value;
+        lname.addEventListener('keyup', function () {
+            if (letterReg.test(lname.value)) {
+                document.getElementById('lname-error').style.display = 'inline-block';
+            } else {
+                document.getElementById('lname-error').style.display = 'none';
+            }
+        })
+
+        const emailReg = /\S+@\S+\.\S+/;
+
+        email.addEventListener('keyup', function () {
+            if (emailReg.test(email.value)) {
+                document.getElementById('email-error').style.display = 'none';
+            } else {
+                document.getElementById('email-error').style.display = 'inline-block';
+            }
+        })
+
+        const passwordReg = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).{8,32}$/;
+
+        password.addEventListener('keyup', function () {
+            if (passwordReg.test(password.value)) {
+                document.getElementById('password-error').style.display = 'none';
+            } else {
+                document.getElementById('password-error').style.display = 'inline-block';
+            }
+        })
+
+        confirm_password.addEventListener('keyup', function () {
+            if (password.value === confirm_password.value) {
+                document.getElementById('confirm-password-error').style.display = 'none';
+            } else {
+                document.getElementById('confirm-password-error').style.display = 'inline-block';
+            }
+        })
+
+        document.getElementById('register').addEventListener('click', function (e) {
+            e.preventDefault();
+
+            if (password.value == confirm_password.value) {
+                localStorage.setItem('fname', fname.value);
+                localStorage.setItem('lname', lname.value);
+                localStorage.setItem('email', email.value);
+                localStorage.setItem('bdata', bdata.value);
+                localStorage.setItem('password', password.value);
+                alert('Registration Successful');
+            } else {
+                alert('Password not matched');
+            }
+
+        })
+
+
+        document.getElementById('login').addEventListener('click', function (e) {
+            e.preventDefault();
+            var email = document.getElementById('loginemail').value;
             var password = document.getElementById('loginpassword').value;
 
-            if(localStorage.username == username && localStorage.password == password){
+            if (localStorage.email == email && localStorage.password == password) {
                 alert('Login Successful');
-            }else{
+            } else {
                 alert('Login Failed');
             }
         })
@@ -84,4 +151,5 @@
     </script>
 
 </body>
+
 </html>
